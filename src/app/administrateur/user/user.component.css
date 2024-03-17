@@ -1,0 +1,118 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Farfetch CSS styles */
+/* Navigation bar styles */
+.navbar {
+    background-color: #000;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar ul li:last-child {
+    margin-right: 0;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Additional styles for the user table */
+.user-table {
+    margin: 20px;
+}
+
+.user-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.user-table button {
+    background-color: black; /* Updated background color */
+    color: white; /* Updated text color */
+    border: none;
+    padding: 10px; /* Updated padding */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-table button:hover {
+    background-color: #333; /* Updated hover color */
+}
+
+/* Additional styles for the add user form */
+.add-user-form {
+    margin: 20px;
+}
+
+.add-user-form h2 {
+    margin-bottom: 10px;
+}
+
+.add-user-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-user-form label {
+    margin-bottom: 5px;
+}
+
+.add-user-form input {
+    padding: 10px; /* Updated padding */
+    width: 100%; /* Updated width */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.add-user-form button {
+    background-color: black; /* Updated background color */
+    color: white; /* Updated text color */
+    border: none;
+    padding: 10px; /* Updated padding */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-user-form button:hover {
+    background-color: #333; /* Updated hover color */
+}

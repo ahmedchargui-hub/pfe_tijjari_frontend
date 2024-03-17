@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="user.component.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a routerLink="/calendar">Calendar</a></li>
+        <li><a routerLink="/user">User</a></li>
+        <li><a routerLink="/role">Role</a></li>
+      </ul>
+    </div>
+
+    <div class="user-table">
+      <h2>User Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+            <!-- Added column for actions -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example data for demonstration purposes -->
+          <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john.com</td>
+            <td>
+
+<!--
+              <button (click)="editUser(1)">Edit</button>
+            
+              <button style="margin-left: 5px" (click)="deleteUser(1)">
+                Delete
+              </button>
+              -->
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>'janegmail.com'</td>
+            <td>
+
+                 <!--
+              <button (click)="editUser(2)">Edit</button>
+               Add margin between buttons
+                <button style="margin-left: 5px" (click)="deleteUser(2)">
+                   Delete
+              </button>
+ -->
+            </td>
+          </tr>
+          <!-- Add more rows with example data as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add user form (for adding new users) -->
+    <div class="add-user-form">
+      <h2>Add User</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <button class ="btn btn-success" type="submit" >Add User</button>
+      </form>
+    </div>
+
+    <script>
+      function handleActionError(errorMessage) {
+        alert(errorMessage);
+      }
+    </script>
+  </body>
+</html>
