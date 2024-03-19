@@ -3,12 +3,13 @@ import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullca
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid';
+
 @Component({
-  selector: 'app-organizer',
-  templateUrl: './organizer.component.html',
-  styleUrl: './organizer.component.css'
+  selector: 'app-admincalendar',
+  templateUrl: './admincalendar.component.html',
+  styleUrl: './admincalendar.component.css'
 })
-export class OrganizerComponent {
+export class AdmincalendarComponent {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
@@ -54,3 +55,5 @@ export class OrganizerComponent {
 };
  
   }
+
+  

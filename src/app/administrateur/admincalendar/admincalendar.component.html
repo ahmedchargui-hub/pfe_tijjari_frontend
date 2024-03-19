@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fretch Clothing App</title>
-  <link rel="stylesheet" href="administrateur.component.css">
+  <link rel="stylesheet" href="admincalendar.component.css">
 </head>
 <body>
   <div class="navbar">
@@ -14,7 +14,8 @@
       <li><a routerLink="/role">Role</a></li>
     </ul>
   </div>
-
-
+  <div>
+    <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+  </div>
 </body>
 </html>
