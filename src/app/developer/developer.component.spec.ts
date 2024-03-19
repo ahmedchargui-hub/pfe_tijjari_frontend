@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { DeveloperComponent } from './developer.component';
-import { attributes, componentList } from '@syncfusion/ej2-base';
 import { emit } from 'process';
 import { ArrowFunctionExpr } from '@angular/compiler';
 import { sequenceEqual } from 'rxjs';

@@ -11,10 +11,15 @@ import {MatButtonModule} from '@angular/material/button';
 export class EventModalComponent {
   name: string = ''; 
   constructor(public dialog: MatDialog) {}
+  
   // Define the variable 'nom'
 
  
- onSubmit(e:any){
+ onSubmit(e:any){this.name=e.target.elements[0].value; this.openmodal()}openmodal() {
+    throw new Error('Method not implemented.');
+  }
+;
 
  }
-}
+
+

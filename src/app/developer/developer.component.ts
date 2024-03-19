@@ -1,18 +1,16 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
-import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
-import { EventModalComponent } from './event-modal/event-modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { EventModalComponent } from '../components/event-modal/event-modal.component';
+import listPlugin from '@fullcalendar/list';
+
 @Component({
   selector: 'app-root',
   templateUrl: './developer.component.html',
   styleUrls: ['./developer.component.css'],
-
 })
 export class DeveloperComponent {
   title(title: any) {
@@ -20,37 +18,51 @@ export class DeveloperComponent {
   }
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
-    plugins: [
-      interactionPlugin,
-      dayGridPlugin,
-      timeGridPlugin,
-      listPlugin,
-    ],
+    plugins: [interactionPlugin, timeGridPlugin,listPlugin],
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      right: 'timeGridDay,timeGridWeek,listWeek' // Removed 'dayGridMonth' option
     },
-    initialView: 'dayGridMonth',
-    initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
-    weekends: true,
+    initialView: 'timeGridWeek',
+    initialEvents: INITIAL_EVENTS,
+    weekends: false,
     editable: true,
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
-    eventsSet: this.handleEvents.bind(this)
-    /* you can update a remote database when these fire:
-    eventAdd:
-    eventChange:
-    eventRemove:
-    */
-  };
+    eventsSet: this.handleEvents.bind(this),
+    slotMinTime: '08:00:00', // Set minimum time to 08:00 AM
+    slotMaxTime: '18:00:00', // Set maximum time to 06:00 PM
+    
+    businessHours: [ // Define business hours to exclude 1pm to 2pm
+    {
+      daysOfWeek: [1, 2, 3, 4, 5], // Monday to Friday
+      startTime: '08:00', // 8am
+      endTime: '13:00' // 1pm
+    },
+    {
+      daysOfWeek: [1, 2, 3, 4, 5], // Monday to Friday
+      startTime: '14:00', // 2pm
+      endTime: '18:00' // 6pm
+    }
+  ],
+
+  slotLabelContent: (args) => {
+    const date = args.date;
+    const hour = date.getHours();
+    if (hour === 13) { // Hide 1 PM slot
+      return '';
+    } else {
+      return args.text;
+    }}
+};
   currentEvents: EventApi[] = [];
 
-  constructor(private changeDetector: ChangeDetectorRef,public dialog: MatDialog) {
-  }
+  constructor(private changeDetector: ChangeDetectorRef, public dialog: MatDialog) {}
+
   openDialog() {
     const dialogRef = this.dialog.open(EventModalComponent);
 
@@ -58,31 +70,9 @@ export class DeveloperComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
-  handleCalendarToggle() {
-    this.calendarVisible = !this.calendarVisible;
-  }
-
-  handleWeekendsToggle() {
-    const { calendarOptions } = this;
-    calendarOptions.weekends = !calendarOptions.weekends;
-  }
 
   handleDateSelect(selectInfo: DateSelectArg) {
-    this.openDialog()
-   /* const title = prompt('Please enter a new project title');
-    const calendarApi = selectInfo.view.calendar;
-
-    calendarApi.unselect(); // clear date selection
-
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay
-      });
-    }*/
+    this.openDialog();
   }
 
   handleEventClick(clickInfo: EventClickArg) {

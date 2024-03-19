@@ -18,7 +18,7 @@ import { CalendarorgComponent } from './organizer/calendarorg/calendarorg.compon
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EventModalComponent } from './developer/event-modal/event-modal.component';
+import { EventModalComponent } from './components/event-modal/event-modal.component';
 
 @NgModule({
   declarations: [

@@ -1,19 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fretch Clothing App</title>
-  <link rel="stylesheet" href="administrateur.component.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="administrateur.component.css">
+
+    <!-- Add your other CSS and head elements here -->
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
-  <div class="navbar">
-    <ul>
-      <li><a routerLink="/calendar">Calendar</a></li>
-      <li><a routerLink="/user">User</a></li>
-      <li><a routerLink="/role">Role</a></li>
-    </ul>
+  <div class="centered-image">
+    <img src="assets/logopfe1.gif" alt="Attijariwafa Bank">
   </div>
+  
+  
+    <div id="nav-bar">
+        <input id="nav-toggle" type="checkbox"/>
+        <div id="nav-header"><a id="nav-title" target="_blank"><i class="fas fa-tachometer-alt"></i>Dashbord</a>
+          <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+          <hr/>
+        </div>
+        <div id="nav-content">
+          <div class="nav-button" id="users-button"><i class="fas fa-users"></i><span>Users</span></div>
+          <div class="nav-button" id="users-button"><i class="fas fa-users"></i><span>Role</span></div>
+          <div class="nav-button" id="users-button"><i class="fas fa-users"></i><span>Calendar</span></div>
 
+
+
+          <div id="nav-content-highlight"></div>
+        </div>
+        <input id="nav-footer-toggle" type="checkbox"/>
+        <div id="nav-footer">
+       <div id="nav-footer-heading">
+  <div class="avatar-container" id = "nav-footer-avatar">
+    <img src="https://us.123rf.com/450wm/osherro/osherro2010/osherro201000011/157957743-user-avatar-profile-icon-black-vector-illustration-website-or-app-member-ui-button.jpg?ver\u003d6" />
+    <span id="online-indicator" class="active"></span>
+  </div>
+  <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+  <div id="nav-footer-titlebox">
+    <a id="nav-footer-title" target="_blank">
+      <span th:text="${username}"></span>
+    </a>
+    <span id="nav-footer-subtitle">Admin</span>
+  </div>
+</div>
+
+          <div id="nav-footer-content">
+            <div class="nav-button"><i class="fas fa-user"></i><span>Profile</span></div>
+            <div class="nav-button" id="logout-button"><i class="fas fa-sign-out-alt"></i><span>Logout</span></div>
+          </div>
+        </div>
+      </div>
+      <script>
+		  var username = "kouthayerelwannessi";
+		  function redirectIndexUser() {
+    // Redirect to the /userList URL
+    window.location.href ="/indexUser/" + username;
+}
+function redirectAllAnomaliesUsers() {
+	window.location.href ="/anomalieList2"; 
+}
+			function redirectLogin() {
+        window.location.href ="/";
+    }
+// Add a click event listener to the "Users" button
+const usersButton = document.getElementById("users-button");
+const anomalysButton = document.getElementById("anomalys-button");
+const logoutButton = document.getElementById("logout-button");
+
+if (usersButton) {
+  usersButton.addEventListener("click", () => {
+    // Call the redirectAllUser function when the button is clicked
+    redirectIndexUser();
+  });
+}
+if (anomalysButton) {
+  anomalysButton.addEventListener("click", () => {
+    // Call the redirectAllUser function when the button is clicked
+    redirectAllAnomaliesUsers();
+  });
+}
+if (logoutButton) {
+  logoutButton.addEventListener("click", () => {
+    // Call the redirectAllUser function when the button is clicked
+    redirectLogin();
+  });
+}
+
+	  </script>
 </body>
 </html>
