@@ -1,0 +1,41 @@
+<mat-nav-list>
+  <div class="logo py-4">
+    <img src="./assets/logopfe1.gif" alt="Company Logo" />
+  </div>
+  <mat-divider></mat-divider>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="home">
+    <mat-icon>home</mat-icon> Home
+  </a>
+ 
+
+    <a routerLink="admincalendar" mat-list-item>
+      <mat-icon>calendar_today</mat-icon> Calendar
+    </a>
+  <a routerLink="user" mat-list-item> <mat-icon>person</mat-icon> Users </a>
+ 
+  <a routerLink="role" mat-list-item> <mat-icon>supervisor_account</mat-icon> Role
+  </a>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="dashboard">
+    <mat-icon>person_add</mat-icon> <!-- Change the icon to represent user account requests -->
+    Account Requests <!-- Update the text to be more descriptive if needed -->
+</a>
+
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="d-flex align-items-center justify-content-end">
+    <button mat-button matMenuTrigger [matMenuTriggerFor]="menu" class="user">
+      <img src="./assets/user.png" alt="User Image" class="user-image mr-1" />
+      User Name
+      <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+  </div>
+</mat-nav-list>

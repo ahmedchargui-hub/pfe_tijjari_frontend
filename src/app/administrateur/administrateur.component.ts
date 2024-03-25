@@ -6,12 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './administrateur.component.css'
 })
 export class AdministrateurComponent {
-users: any;
-editUser(_t14: any) {
-throw new Error('Method not implemented.');
-}
-deleteUser(_t14: any) {
-throw new Error('Method not implemented.');
-}
+  title = 'admin-panel-layout';
+  sideBarOpen = true;
 
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }

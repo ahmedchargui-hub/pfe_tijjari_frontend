@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fretch Clothing App</title>
-  <link rel="stylesheet" href="administrateur.component.css">
-</head>
-<body>
-  <div class="navbar">
-    <ul>
-      <li><a routerLink="/admincalendar">Calendar</a></li>
-      <li><a routerLink="/user">User</a></li>
-      <li><a routerLink="/role">Role</a></li>
-    </ul>
-  </div>
-
-
-</body>
-</html>
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <!-- <mat-drawer mode="side" opened="true"> -->
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

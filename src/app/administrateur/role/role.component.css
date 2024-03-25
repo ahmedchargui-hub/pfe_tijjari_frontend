@@ -3,47 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
   
-  /* Farfetch CSS styles */
-  /* Navigation bar styles */
-  .navbar {
-    background-color: #000;
-    padding: 10px 0;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  .navbar ul li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  .navbar ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .navbar ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .navbar ul li a:hover {
-    background-color: #333;
-    border-radius: 5px;
-  }
-  
-  /* Additional styles for the role page */
+    /* Additional styles for the role page */
   .role-table {
     margin: 20px;
+    border-bottom: 3px solid #ddd;
+
   }
   
   .role-table table {
@@ -55,10 +22,13 @@
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    
   }
   
   .role-table th {
     background-color: #f2f2f2;
     font-weight: bold;
+        border-bottom: 3px solid #ddd;
+
   }
   

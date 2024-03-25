@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App</title>
-</head>
-<body>
-  <div class="navbar">
-    <ul>
-      <li><a routerLink="#">Calendar</a></li>
-    </ul>
-  </div>
-  <div>
-  <full-calendar #calendar [options]="calendarOptions"></full-calendar>
-</div>
-</body>
-</html>
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <!-- <mat-drawer mode="side" opened="true"> -->
+      <app-sidenavorg></app-sidenavorg>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-headerorg (toggleSidebarForMe)="sideBarToggler()"></app-headerorg>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

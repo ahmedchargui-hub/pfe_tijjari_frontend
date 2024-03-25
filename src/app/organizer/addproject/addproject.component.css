@@ -1,0 +1,57 @@
+.farfetch-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.farfetch-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.farfetch-table label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Styling for the input fields */
+.farfetch-table input[type="text"],
+.farfetch-table textarea,
+.farfetch-table select {
+    width: calc(100% - 16px); /* Adjust the width as needed */
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+/* Styling for the date input fields */
+.farfetch-table input[type="date"] {
+    width: calc(100% - 16px); /* Adjust the width as needed */
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+/* Styling for the submit button */
+.submit-button {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    display: block;
+    margin: 20px auto; /* Center the button horizontally and add some top margin */
+}
+
+.submit-button:hover {
+    background-color: #1a252f;
+}

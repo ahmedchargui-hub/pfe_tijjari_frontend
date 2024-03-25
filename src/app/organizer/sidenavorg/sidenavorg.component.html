@@ -1,0 +1,38 @@
+<mat-nav-list>
+    <div class="logo py-4">
+      <img src="./assets/logopfe1.gif" alt="Company Logo" />
+    </div>
+    <mat-divider></mat-divider>
+  
+
+    <a routerLink="/organizer/calendarorg" mat-list-item>
+      <mat-icon>calendar_today</mat-icon> Calendar
+    </a>
+    
+    <a routerLink="/organizer/addproject" mat-list-item>
+      <mat-icon>add_circle</mat-icon> Add Project
+    </a>
+    
+    <a routerLink="/organizer/projectstatus" mat-list-item>
+      <mat-icon>send</mat-icon> Send Project Status
+    </a>
+    
+      <br><br>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br>
+    <mat-divider></mat-divider>
+    <br>
+    <div class="d-flex align-items-center justify-content-end">
+      <button mat-button matMenuTrigger [matMenuTriggerFor]="menu" class="user">
+        <img src="./assets/user.png" alt="User Image" class="user-image mr-1" />
+        User Name
+        <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          Logout
+        </button>
+      </mat-menu>
+    </div>
+  </mat-nav-list>
+  

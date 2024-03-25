@@ -1,0 +1,72 @@
+<br>
+<table class="farfetch-table">
+    <tr>
+        <td><label for="code">Code Projet:</label></td>
+        <td><input type="text" id="code" name="code" [(ngModel)]="code" /></td>
+    </tr>
+    <tr>
+        <td><label for="nom">Nom Projet:</label></td>
+        <td><input type="text" id="nom" name="nom" [(ngModel)]="nom" /></td>
+    </tr>
+    <tr>
+        <td><label for="description">Description:</label></td>
+        <td><textarea id="description" name="description" [(ngModel)]="description"></textarea></td>
+    </tr>
+    <tr>
+        <td><label for="unite">Unité concernée:</label></td>
+        <td>
+            <select id="unite" name="unite" [(ngModel)]="unite">
+                <option value="Unité 1">Monétique</option>
+                <option value="Unité 2">Juridique</option>
+                <option value="Unité 3">Credit</option>
+                <option value="Unité 4">Finance </option>
+                <option value="Unité 5">RH</option>
+                <option value="Unité 6">SI</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="date_debut">Date de début:</label></td>
+        <td><input type="date" id="date_debut" name="date_debut" [(ngModel)]="date_debut" /></td>
+    </tr>
+    <tr>
+        <td><label for="date_fin">Date de fin:</label></td>
+        <td><input type="date" id="date_fin" name="date_fin" [(ngModel)]="date_fin" /></td>
+    </tr>
+    <tr>
+        <td><label for="statut">Statut de projet:</label></td>
+        <td>
+            <select id="statut" name="statut" [(ngModel)]="statut">
+                <option value="En cours d'étude métier">En cours d'étude métier</option>
+                <option value="Initié">Initié</option>
+                <option value="En cours d'étude orga">En cours d'étude orga</option>
+                <option value="Initié orga">Initié orga</option>
+                <option value="En cours d'étude dev">En cours d'étude dev</option>
+                <option value="Affectée dev">Affectée dev</option>
+                <option value="En cours développement">En cours développement</option>
+                <option value="Développement terminé">Développement terminé</option>
+                <option value="En cours de test">En cours de test</option>
+                <option value="Test validé">Test validé</option>
+                <option value="Test non validé">Test non validé</option>
+                <option value="Préparation mise en prod orga">Préparation mise en prod orga</option>
+                <option value="Préparation mise en prod dev">Préparation mise en prod dev</option>
+                <option value="Projet en prod">Projet en prod</option>
+                <!-- Add other options as needed -->
+            </select>
+            
+        </td>
+    </tr>
+    <tr>
+        <td><label for="dev_nom">Nom de Developer:</label></td>
+        <td><input type="text" id="dev_nom" name="dev_nom" [(ngModel)]="dev_nom" /></td>
+    </tr>
+    <tr>
+        <td><label for="dev_prenom">Prénom de Developer:</label></td>
+        <td><input type="text" id="dev_prenom" name="dev_prenom" [(ngModel)]="dev_prenom" /></td>
+    </tr>
+    <tr>
+        <td><label for="matricule">Matricule:</label></td>
+        <td><input type="text" id="matricule" name="matricule" [(ngModel)]="matricule" /></td>
+    </tr>
+</table>
+<button type="submit" class="submit-button">Add Project</button>

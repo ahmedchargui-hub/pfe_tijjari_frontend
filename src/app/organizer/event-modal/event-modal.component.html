@@ -1,0 +1,31 @@
+<form class="farfetch-form" (submit)="onSubmit()">
+  <label for="nom">Nom Projet:</label>
+  <input type="text" id="nom" name="nom" [(ngModel)]="nom" /><br />
+
+  <label for="nom">Statut:</label>
+
+  <select id="statut" name="statut" [(ngModel)]="statut">
+    <option value="En cours d'étude métier">En cours d'étude métier</option>
+    <option value="Initié">Initié</option>
+    <option value="En cours d'étude orga">En cours d'étude orga</option>
+    <option value="Initié orga">Initié orga</option>
+    <option value="En cours d'étude dev">En cours d'étude dev</option>
+    <option value="Affectée dev">Affectée dev</option>
+    <option value="En cours développement">En cours développement</option>
+    <option value="Développement terminé">Développement terminé</option>
+    <option value="En cours de test">En cours de test</option>
+    <option value="Test validé">Test validé</option>
+    <option value="Test non validé">Test non validé</option>
+    <option value="Préparation mise en prod orga">Préparation mise en prod orga</option>
+    <option value="Préparation mise en prod dev">Préparation mise en prod dev</option>
+    <option value="Projet en prod">Projet en prod</option>
+</select>
+
+  <label for="dateDebut">Date de début:</label>
+  <input type="date" id="dateDebut" name="dateDebut" [(ngModel)]="dateDebut" /><br />
+
+  <label for="dateFin">Date de fin:</label>
+  <input type="date" id="dateFin" name="dateFin" [(ngModel)]="dateFin" /><br />
+
+  <button type="submit">Add Project</button>
+</form>

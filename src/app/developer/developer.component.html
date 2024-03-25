@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App</title>
-</head>
-<body>
-  <div class="navbar">
-    <ul>
-      <li><a routerLink="#">Calendar</a></li>
-    </ul>
+<mat-toolbar class="custom-toolbar">
+  <div class="logo py-4">
+    <img src="./assets/logopfe1.gif" alt="Company Logo" />
   </div>
-  <div>
-  <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+  <span class="spacer"></span>
+  <span class="title">Projects</span>
+  <span class="spacer"></span>
+  <div class="d-flex align-items-center justify-content-end">
+    <button mat-button matMenuTrigger [matMenuTriggerFor]="menu" class="user">
+      <img src="./assets/user.png" alt="User Image" class="user-image mr-1" />
+      User Name
+      <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<div>
+  <br />
 </div>
-</body>
-</html>
